@@ -1,4 +1,5 @@
 const menu = document.querySelector(".header")
+const menuLists = document.querySelectorAll(".list-menu li")
 
 function ativarScroll() {
     menu.classList.toggle('scrolly', scrollY > 20);
@@ -17,3 +18,11 @@ function abrirMenu() {
 }
 
 btnMenu.addEventListener('click', abrirMenu);
+
+for (var listItem of menuLists) {
+    listItem.addEventListener("click", () => {
+  
+      listaMenu.classList.remove("active")
+      btnIcon.classList.remove('active')
+    }
+)}

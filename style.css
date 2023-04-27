@@ -1,37 +1,54 @@
+/* ---------------------------------- reset ---------------------------------- */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
-    text-decoration: none;
-    color: #ffffff;
 }
 html {
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+ul {
+    list-style: none;
+}
 body {
-    background: #111111;
+    background: var(--bg-primary);
+    color: var(--text-color);
 }
 hr {
     width: 100%;
 }
 
+/* ---------------------------------- root variables ---------------------------------- */
+:root {
+    --color-primary: #64acff;
+    --color-secondary: #969595;
+    --text-color: #ffffff;
+    --bg-primary: #111111;
+    --bg-secondary: #0f4685;
+    --bg-section: #1b1b1b;
+}
+
 /* ---------------------------------- header ---------------------------------- */
-.header {
+.site-header {
     position: fixed;
-    z-index: 999;
+    z-index: 2;
     width: 100%;
-    background: #111111;
+    background: transparent;
     padding: 1.7rem 2rem;
-    border-bottom: 1px solid #969595;
+    border-bottom: 1px solid var(--color-secondary);
     transition: all .3s ease;
 }
-.header.scrolly {
-    background: #0f4685;
+.site-header.scrolly {
+    background: var(--bg-secondary);
     padding: 1.2rem 2rem;
 }
-.navbar {
+.main-nav {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -40,112 +57,121 @@ hr {
     flex-wrap: wrap;
 }
 .logo {
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: 600;
-    color: #969595;
+    color: var(--color-secondary);
 }
 .logo span {
-    font-size: 28px;
-    color: #64acff;
+    font-size: 2rem;
+    color: var(--color-primary);
     transition: all .3s ease;
 }
-.header.scrolly .logo span {
-    color: #ffffff;
+.site-header.scrolly .logo span {
+    color: var(--text-color)
 }
-.list-menu li{
+.nav-links li{
     margin-left: 3rem;
     font-weight: 600;
     display: inline-block;
-    position: relative;
 }
-.list-menu a {
-    font-size: 18px;
+.nav-links a {
+    font-size: 1.125rem;
     transition: .3s;
 }
-.list-menu a:hover {
-    color: #64acff;
+.nav-links a:hover {
+    color: var(--color-primary);
 }
-.header.scrolly .list-menu a:hover {
-    color: #969595;
+.site-header.scrolly .nav-links a:hover {
+    color: var(--color-secondary);
 }
 
-.btn-menu {
+.menu-btn {
     cursor: pointer;
     display: none;
+    background: transparent;
+    border: none;
 }
-.btn-menu i {
-    font-size: 23px;
+.menu-btn i {
+    font-size: 1.45rem;
+    color: var(--color-primary);
+    transition: .3s;
 }
-.btn-menu i.active::before {
+.site-header.scrolly .menu-btn i {
+    color: var(--text-color);
+}
+.menu-btn i.active::before {
     content: "\f00d";
 }
 
 
 main {
+    position: relative;
     width: 100%;
     padding: 0 2rem;
 }
 
-/* ---------------------------------- start ---------------------------------- */
+/* ---------------------------------- start section ---------------------------------- */
 .section-start {
     max-width: 1200px;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 5rem 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .text-1 {
-    font-size: 27px;
+    font-size: 1.7em;
 }
 .text-2 {
-    font-size: 70px;
+    font-size: 5em;
     font-weight: 600;
-    margin-left: -3px;
+    margin-left: -0.03em;
 }
 .text-3 {
-    font-size: 40px;
-    margin: 5px 0;
+    font-size: 2.5em;
+    margin: .31em 0;
 }
 .text-3 span {
-    color: #64acff;
+    color: var(--color-primary);
     font-weight: 500;
 }
 
 .btn-start {
     display: flex;
     gap: 3rem;
-    margin-top: 1rem;
+    margin-top: 1em;
 }
 .btn-start a {
     display: flex;
     align-items: center;
-    gap: .7rem;
-    border-radius: .3rem;
-    padding: .5rem 1.3rem;
-    border: 2px solid #64acff;
+    gap: .7em;
+    border-radius: .3em;
+    padding: .5em 1.3em;
+    border: .2em solid var(--color-primary);
     transition: .5s;
 }
 .btn-start a:hover {
-    background: #64acff;
+    background: var(--color-primary);
 }
 .btn-start i {
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .content-img {
-    width: 45%;
+    position: absolute;
+    right: 2em;
+    width: 60%;
+    opacity: .5;
 }
 .content-img img {
     width: 100%;
 }
 
-/* ---------------------------------- about ---------------------------------- */
+/* ---------------------------------- about section ---------------------------------- */
 .section-about {
     max-width: 1200px;
     min-height: 100vh;
-    background: #1b1b1b;
+    background: var(--bg-section);
     margin: 0 auto;
     padding: 5rem 0;
     border-radius: .3rem;
@@ -161,14 +187,14 @@ main {
     font-weight: 500;
     margin-bottom: 10px;
 }
-.content-about {
+.container-about {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin: 60px 2rem 0 2rem;
 }
-.img-me img {
+.about-image img {
     width: 350px;
     height: 350px;
     object-fit: cover;
@@ -185,12 +211,12 @@ main {
     font-weight: 600;
 }
 .text-about span {
-    color: #64acff;
+    color: var(--color-primary);
 }
 .about-me p {
     text-align: justify;
     font-weight: 600;
-    color: #969595;
+    color: var(--color-secondary);
     line-height: 22px;
 }
 .curriculum {
@@ -200,27 +226,26 @@ main {
     gap: .7rem;
     border-radius: .3rem;
     padding: .6rem 1.3rem;
-    border: 2px solid #64acff;
+    border: 2px solid var(--color-primary);
     transition: .5s;
 }
 .curriculum:hover {
-    background: #64acff;
+    background: var(--color-primary);
 }
 
-/* ---------------------------------- projects ---------------------------------- */
+/* ---------------------------------- projects section ---------------------------------- */
 .section-projects {
     max-width: 1200px;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 5rem 0;
-    border-radius: .3rem;
+    padding: 10rem 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.content-projects {
+.container-projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -230,9 +255,14 @@ main {
 }
 .card {
     width: 350px;
-    background: #1b1b1b;
+    background: var(--bg-section);
     border-radius: .3rem;
     padding: 20px 0;
+    border: 1px solid #96959586;
+    transition: .5s;
+}
+.card:hover {
+    scale: 1.04;
 }
 .card img {
     width: 100%;
@@ -248,7 +278,7 @@ main {
     font-size: 20px;
     font-weight: 600;
     margin-top: 1rem;
-    color: #64acff;
+    color: var(--color-primary);
 }
 .text-box {
     font-size: 16px;
@@ -257,18 +287,18 @@ main {
 }
 .technologies {
     font-size: 13px;
-    color: #969595;
+    color: var(--color-secondary);
 }
 .box a {
     width: fit-content;
     font-size: 15px;
     border-radius: .3rem;
     padding: .3rem .9rem;
-    border: 2px solid #64acff;
+    border: 2px solid var(--color-primary);
     transition: .5s;
 }
 .box a:hover {
-    background: #64acff;
+    background: var(--color-primary);
 }
 
 .em-breve {
@@ -280,7 +310,7 @@ main {
 .section-skills {
     max-width: 1200px;
     min-height: 100vh;
-    background: #1b1b1b;
+    background: var(--bg-section);
     margin: 0 auto;
     padding: 5rem 0;
     border-radius: .3rem;
@@ -291,12 +321,13 @@ main {
     align-items: center;
     position: relative;
 }
-.content-skills {
+.container-skills {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin: 60px 2rem 0 2rem;
+    padding: 0 0 5rem 0;
 }
 .description-skills,  .level-skills {
     width: calc(50% - 30px);
@@ -340,7 +371,7 @@ main {
     height: 100%;
     left: 0;
     top: 0;
-    background: #0f4685;
+    background: var(--bg-secondary);
 }
 .html::before {
     width: 80%;
@@ -349,7 +380,7 @@ main {
     width: 75%;
 }
 .javascript::before {
-    width: 66%;
+    width: 70%;
 }
 .git::before {
     width: 70%;
@@ -362,11 +393,11 @@ main {
 .section-contact {
     position: absolute;
     width: 100%;
-    background: #111111;
+    background: var(--bg-primary);
     bottom: 0;
     padding: 1rem 0;
 }
-.content-contact {
+.container-contact {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -380,12 +411,16 @@ main {
 .credits span {
     font-size: 15px;
     font-weight: 600;
-    color: #969595;
+    color: var(--color-secondary);
 }
 .connections i {
     font-size: 40px;
     margin-left: 1rem;
-    color: #969595;
+    color: var(--color-secondary);
+    transition: .5s;
+}
+.connections i:hover {
+    color: var(--text-color);
 }
 
 
@@ -421,7 +456,7 @@ main {
 
 
     /* ---------------------- about ---------------------- */
-    .content-about {
+    .container-about {
         margin: 50px 2rem 0 2rem;
     }
     .title {
@@ -439,7 +474,7 @@ main {
 
 
     /* ---------------------- projects ---------------------- */
-    .content-projects {
+    .container-projects {
         margin: 50px 0 0;
     }
     .card {
@@ -470,10 +505,11 @@ main {
 
 
     /* ---------------------- skills ---------------------- */
-    .content-skills {
+    .container-skills {
         margin: 50px 2rem 0 2rem;
     }
 }
+
 
 @media (max-width: 1024px) {
     /* ------------------- header ------------------- */
@@ -483,22 +519,22 @@ main {
     .logo span {
         font-size: 24px;
     }
-    .list-menu li{
+    .nav-links li{
         margin-left: 2.5rem;
     }
-    .list-menu a {
+    .nav-links a {
         font-size: 14px;
     }
 
     /* ---------------------- start ---------------------- */
     .text-1 {
-        font-size: 23px;
+        font-size: 22px;
     }
     .text-2 {
-        font-size: 60px;
+        font-size: 58px;
     }
     .text-3 {
-        font-size: 34px;
+        font-size: 32px;
     }
     
     .btn-start {
@@ -510,15 +546,15 @@ main {
     .title {
         font-size: 30px;
     }
-    .content-about {
+    .container-about {
         margin: 40px 2rem 0 2rem;
     }
-    .img-me img {
+    .about-image img {
         width: 300px;
         height: 300px;
     }
     .about-me {
-        width: 51%;
+        width: 52%;
     }
     .text-about {
         font-size: 21px;
@@ -532,7 +568,7 @@ main {
 
 
     /* ---------------------- projects ---------------------- */
-    .content-projects {
+    .container-projects {
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
         margin: 40px 0 0;
@@ -556,7 +592,7 @@ main {
 
 
     /* ---------------------- skills ---------------------- */
-    .content-skills {
+    .container-skills {
         margin: 40px 2rem 0 2rem;
     }
     .description-skills,  .level-skills {
@@ -590,16 +626,17 @@ main {
     }
 }
 
+
 @media (max-width: 768px) {
     /* ------------------- header ------------------- */
-    .header {
+    .site-header {
         padding: 1.5rem 1.5rem;
     }
-    .header.scrolly {
+    .site-header.scrolly {
         padding: 1.2rem 1.5rem;
     }
 
-    .list-menu {
+    .nav-links {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -612,17 +649,17 @@ main {
         padding: 3rem;
         transition: all .3s ease;
     }
-    .list-menu a {
+    .nav-links a {
         font-size: 18px;
     }
-    .list-menu.active {
+    .nav-links.active {
         left: 0;
     }
-    .list-menu li{
+    .nav-links li{
         margin: 1.5rem 0;
         width: fit-content;
     }
-    .btn-menu {
+    .menu-btn {
         display: block;
         z-index: 999;
     }
@@ -634,16 +671,6 @@ main {
 
     
     /* ------------------- start ------------------- */
-    .text-1 {
-        font-size: 24px;
-    }
-    .text-2 {
-        font-size: 58px;
-    }
-    .text-3 {
-        font-size: 32px;
-    }
-
     .btn-start {
         gap: 1.5rem;
     }
@@ -665,12 +692,12 @@ main {
     .title {
         font-size: 27px;
     }
-    .content-about {
+    .container-about {
         justify-content: center;
         margin: 40px 2rem 0 2rem;
         gap: 1rem;
     }
-    .img-me img {
+    .about-image img {
         width: 250px;
         height: 250px;
     }
@@ -683,7 +710,7 @@ main {
 
 
     /* ------------------- projects ------------------- */
-    .content-projects {
+    .container-projects {
         grid-template-columns: 1fr;
         gap: 2rem;
         margin: 30px 0 0;
@@ -710,7 +737,7 @@ main {
 
 
     /* ------------------- skills ------------------- */
-    .content-skills {
+    .container-skills {
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
@@ -737,12 +764,13 @@ main {
     }
 }
 
+
 @media (max-width: 425px) {
     /* ------------------- header ------------------- */
-    .header {
+    .site-header {
         padding: 1.5rem .5rem;
     }
-    .header.scrolly {
+    .site-header.scrolly {
         padding: 1.2rem .5rem;
     }
     .logo {
@@ -761,9 +789,6 @@ main {
     }
 
     /* ------------------- start ------------------- */
-    .text-1 {
-        font-size: 22px;
-    }
     .text-2 {
         font-size: 50px;
     }
@@ -778,24 +803,20 @@ main {
         font-size: 15px;
         gap: .6rem;
         padding: .5rem 1rem;
+        border: .15em solid var(--color-primary);
     }
     .btn-start i {
         font-size: 16px;
     }
 
-    .content-img {
-        display: none;
-    }
-
-
     /* ------------------- about ------------------- */
-    .content-about {
+    .container-about {
         margin: 30px 1rem 0 1rem;
     }
     .title {
         font-size: 26px;
     }
-    .img-me img {
+    .about-image img {
         width: 300px;
         height: 300px;
     }
@@ -828,7 +849,7 @@ main {
 
 
     /* ------------------- skills ------------------- */
-    .content-skills {
+    .container-skills {
         margin: 30px 2rem 0 1rem;
         gap: .5rem;
     }
@@ -846,6 +867,7 @@ main {
     }
 }
 
+
 @media (max-width: 375px) {
     /* ------------------- start ------------------- */
     .text-1 {
@@ -857,16 +879,16 @@ main {
     .text-3 {
         font-size: 24px;
     } 
-    .btn-inicio a {
+    .btn-start a {
         font-size: 14px;
         gap: .5rem;
     }
-    .btn-inicio i {
+    .btn-start i {
         font-size: 15px;
     }
 
     /* ------------------- about ------------------- */
-    .img-me img {
+    .about-image img {
         width: 250px;
         height: 250px;
     }
@@ -881,8 +903,6 @@ main {
         font-size: 16px;
     }
 
-
-    /* ------------------- skills ------------------- */
     .credits span {
         font-size: 10px;
     }
@@ -890,6 +910,7 @@ main {
         font-size: 21px;
     }
 }
+
 
 @media (max-width: 320px) {
     /* ------------------- start ------------------- */

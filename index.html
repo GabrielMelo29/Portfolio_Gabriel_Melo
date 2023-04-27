@@ -11,28 +11,30 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <p class="logo">&lsaquo;<span>Melo</span>&rsaquo;</p>
-            <ul class="list-menu">
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="/" class="logo">
+                &lsaquo;<span>Melo</span>&rsaquo;
+            </a>
+            <ul class="nav-links">
                 <li><a href="#start">Início</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#skills">Habilidades</a></li>
             </ul>
-            <div class="btn-menu">
+            <button  class="menu-btn">
                 <i class="fa-solid fa-bars btn-icon"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
         <!-- ----------------------------- start ----------------------------- -->
         <section class="section-start" id="start">
-            <div class="content-start">
-                <div class="text-1">Olá, meu nome é</div>
-                <div class="text-2">Gabriel Melo.</div>
-                <div class="text-3">Sou desenvolvedor <span>Front-End</span></div>
+            <div class="container-start">
+                <h2 class="text-1">Olá, meu nome é</h2>
+                <h1 class="text-2">Gabriel Melo.</h1>
+                <h3 class="text-3">Sou desenvolvedor <span>Front-End</span></h3>
                 
                 <div class="btn-start">
                     <a href="https://www.linkedin.com/in/gabriel-melo29/" target="_blank">
@@ -54,44 +56,49 @@
         <section class="section-about" id="about">
             <h2 class="title">Sobre mim</h2>
             <hr>
-            <div class="content-about">
-                <figure class="img-me">
+            <article class="container-about">
+                <figure class="about-image">
                     <img src="img/IMG_20221025_201219_255.jpg" alt="minha foto">
                 </figure>
 
                 <div class="about-me">
                     <div class="text-about">
-                        Eu sou Gabriel Melo e sou um desenvolvedor <span>Front-End</span>
+                        Minha jornada de como encontrei minha vocação no <span>Front-End</span>
                     </div>
-                    <p>Até o ano de 2022 eu não tinha certeza sobre o que eu realmente queria,
-                        mesmo cursando Engenharia Elétrica. Mas sempre tive grande interesse por tecnologia,
-                        o que me levou a estudar por conta própria em cursos gratuitos e no youtube, mas 
-                        nem sempre saíam do básico e também não encontrava algo específico. <br><br>
+                    <p>
+                        Até o ano de 2022 eu não tinha certeza sobre o que eu realmente queria,
+                        mesmo cursando Engenharia Elétrica. Eu sempre tive grande interesse em 
+                        tecnologia e, por isso, comecei a estudar por conta própria, participando 
+                        de cursos gratuitos e assistindo a tutoriais no YouTube. Embora tenha 
+                        aprendido bastante, muitas vezes me limitava ao básico e não encontrava 
+                        nada específico o suficiente para seguir em frente. <br><br>
 
                         No início desse ano consegui a oportunidade no curso de qualificação programador Full 
-                        Stack, estudando inicialmente codificação para Front-End e acabei me identificando
-                        bastante. Após ter conhecimento das ferramentas básicas, continuo meus estudos com o React.
+                        Stack e gostei bastante da área de Front-End. A partir daí, comecei a estudar e me 
+                        dedicar cada vez mais para aprimorar meus conhecimentos e habilidades nesse campo.
+                        Agora, além de dominar as ferramentas básicas, estou cursando Engenharia de Software
+                        e continuo buscando aprender e me atualizar com outras tecnologias.
                     </p>
-                    <a href="img/Currículo_Gabriel.pdf" download class="curriculum">
+                    <a href="img/Currículo_Gabriel_ES.pdf" download class="curriculum">
                         <i class="fa-solid fa-file-arrow-down"></i>
                         <span>Download currículo</span>
                     </a>
                 </div>
-            </div>
+            </article>
         </section>
 
         <!-- ----------------------------- projects ----------------------------- -->
         <section class="section-projects" id="projects">
             <h2 class="title">Projetos</h2>
             <hr>
-            <div class="content-projects">
+            <div class="container-projects">
                 <div class="card">
-                    <img src="img/projetoGM.png" alt="Projeto Game Mania">
+                    <img src="img/projetoGM.png" alt="Imagem do projeto Game Mania">
                     <div class="box">
                         <h3>Game Mania</h3>
                         <p class="text-box">Game Mania é um e-commerce de aparelhos tecnológicos voltado especialmente para o público gamer.</p>
                         <p class="technologies">Tecnologias usadas: HTML, CSS, JavaScript</p>
-                        <a href="https://gabrielmelo29.github.io/Game_Mania" target="_blank">Visualizar</a>
+                        <a href="https://github.com/GabrielMelo29/Game_Mania" target="_blank" title="Visualizar código-fonte no GitHub">Visualizar</a>
                     </div>
                 </div>
                 
@@ -101,7 +108,17 @@
                         <h3>Lista Infinita</h3>
                         <p class="text-box">A Lista infinita é um app para ajudar a registrar títulos em uma lista e também sortear um entre eles.</p>
                         <p class="technologies">Tecnologias usadas: HTML, CSS, JavaScript</p>
-                        <a href="https://gabrielmelo29.github.io/Movie_list" target="_blank">Visualizar</a>
+                        <a href="https://github.com/GabrielMelo29/Movie_list" target="_blank" title="Visualizar código-fonte no GitHub">Visualizar</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="img/preview.jpg" alt="Projeto Habits">
+                    <div class="box">
+                        <h3>myHabits</h3>
+                        <p class="text-box">O myHabits é um app para ajudar a rastrear os hábitos.</p>
+                        <p class="technologies">Tecnologias usadas: HTML, CSS, JavaScript</p>
+                        <a href="https://github.com/GabrielMelo29/Habits" target="_blank" title="Visualizar código-fonte no GitHub">Visualizar</a>
                     </div>
                 </div>
 
@@ -122,7 +139,7 @@
         <section class="section-skills" id="skills">
             <h2 class="title">Habilidades</h2>
             <hr>
-            <div class="content-skills">
+            <div class="container-skills">
                 <div class="description-skills">
                     <div class="my-skills">
                         <i class="fa-brands fa-html5" style="color: #FC490B;"></i>
@@ -130,14 +147,16 @@
                         <i class="fa-brands fa-js" style="color: #FFDF00;"></i>
                         <i class="fa-brands fa-git-alt" style="color: #F15233;"></i>
                         <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-sass" style="color: #CF649A;"></i>
+                        <i class="fa-brands fa-react" style="color: #00D8FF;"></i>
                     </div>
-                    <p>Hoje entendo bem as tecnologias básicas voltadas para o front-end junto do GIT/GITHUB, 
-                        conseguindo fazer bons projetos e hospedando-os para que todos possam ver. <br> <br>
-                        Tenho um ano de experiência em HTML e CSS, 11 meses de Javascript e 10 meses de 
-                        git e github. <br>
-                        Através das barras de porcentagem passo a proficiência que acredito ter em cada uma
-                        das ferramentas. Buscando sempre continuar aprendendo, lendo as documentações das 
-                        ferramentas e explorar melhores práticas.
+                    <p>Eu tenho um bom domínio das tecnologias básicas voltadas para Front-End bem como do 
+                        uso do Git/GitHub. Com um ano e alguns meses de experiência em HTML e CSS, Javascript 
+                        e Git/GitHub, sou capaz de desenvolver projetos de qualidade e hospedá-los para que outros possam ver.<br> <br>
+                        Através das barras de porcentagem demonstro meu nível de proficiência que acredito ter em cada uma
+                        das ferramentas. Além disso, estou atualmente estudando e buscando melhorar minhas habilidades em outras tecnologias, 
+                        incluindo React e Sass. Embora ainda não tenha um nível de proficiência em cada uma dessas ferramentas, estou 
+                        sempre em busca de novas oportunidades de aprendizado, lendo as documentações das ferramentas e explorando as melhores práticas em cada uma delas.
                     </p>
                 </div>
                 <div class="level-skills">
@@ -158,7 +177,7 @@
                     <div class="barra">
                         <div class="info">
                             <span>JavaScript</span>
-                            <span>66%</span>
+                            <span>70%</span>
                         </div>
                         <div class="line javascript"></div>
                     </div>
@@ -180,7 +199,7 @@
             </div>
             <!-- ----------------------------- contact ----------------------------- -->
             <section class="section-contact">
-                <div class="content-contact">
+                <div class="container-contact">
                     <div class="credits">
                         <span>E-mail para contato: gbrlmelo29@gmail.com</span>
                         <span>Feito por Gabriel Melo</span>

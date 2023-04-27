@@ -865,6 +865,10 @@ main {
     .barra {
         margin: 20px 0;
     }
+
+    .connections i {
+        margin-left: .5rem;
+    }
 }
 
 
